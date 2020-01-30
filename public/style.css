@@ -1,8 +1,44 @@
 body {
-  background-color: lightblue;
+  background-color: white;
 }
 
-h1 {
-  color: navy;
-  margin-left: 20px;
+#app {
+  margin-left: initial;
+  flex-basis: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right-color: inherit;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.one { grid-area: one; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.four { grid-area: four; }
+.five { grid-area: five; }
+.display { grid-area: main; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'one main'
+    'two main'
+    'three main'
+    'four main'
+    'five main';
+  grid-gap: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.container > div {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }

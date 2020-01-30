@@ -16,8 +16,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className=''>
-        <img src="https://target.scene7.com/is/image/Target/GUEST_a78a5f7b-a789-4ace-89c1-6530472a0f09?wid=700&amp;hei=700&amp;qlt=80&amp;fmt=webp" alt=""></img>
+      <div className="container">
+        <div className="item one">Image 1</div>
+        <div className="item two">Image 2</div>
+        <div className="item three">Image 3</div>  
+        <div className="item four">Image 4</div>
+        <div className="item five">More</div>
+        <div className="item display">Image Big</div>
       </div>
     );
   }
