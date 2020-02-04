@@ -156,3 +156,11 @@ body {
   justify-content: center;
   color:black;
 }
+
+#modalExitButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 64px;
+  width: 64px;
+}

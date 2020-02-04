@@ -7,8 +7,8 @@ class Slideshow extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 onClick={this.props.hideModal}>SLIDESHOW</h1>
+      <div onClick={this.props.hideModal}>
+        <img id='modalExitButton' src='exitModal.png' />
       </div>
     );
   }
