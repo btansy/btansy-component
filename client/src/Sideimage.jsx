@@ -16,7 +16,7 @@ class SideImage extends React.Component {
     let imageUrl = this.props.imageUrl;
     return (
       <figure id={this.props.name} className={selected} onClick={() => this.props.sideBarClick(imageUrl, this.props.name)}>
-        <img src={imageUrl} alt="Gallery image 3" className="image"></img>
+        <img src={imageUrl} alt='Gallery image' className="image"></img>
       </figure>
     );
   }
