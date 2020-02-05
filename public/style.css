@@ -159,8 +159,32 @@ body {
 
 #modalExitButton {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  height: 64px;
-  width: 64px;
+  right: 5%;
+  top: 5%;
+  height: 60px;
+  width: 60px;
+}
+
+#left {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+#right {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+#modalDisplay{
+  height: 80%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-top: 1%;
 }
