@@ -11,6 +11,7 @@ class App extends React.Component {
     this.sideBarClick = this.sideBarClick.bind(this);
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.helper = this.helper.bind(this);
     this.state = {
       showModal: false,
       images: [
@@ -27,14 +28,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    var x = this;
     var prodId = Math.floor(Math.random() * 3) + 1;
     Axios.get('/img?id=' + prodId)
     .then(function (response) {
-      console.log(response.data);
-      console.log(response.status);
-      console.log(response.statusText);
-      console.log(response.headers);
-      console.log(response.config);
+      x.setState({
+        images: response.data[0].urls,
+        imgMain: response.data[0].urls[0]
+      });
+    });
+  }
+
+  helper(data){
+    this.setState({
+      images: data,
+      imgMain: data[0]
     });
   }
 
