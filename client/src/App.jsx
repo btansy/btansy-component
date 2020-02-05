@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Sideimage from './Sideimage.jsx';
 import Modal from './Modal.jsx';
 import Slideshow from './Slideshow.jsx';
+import Axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +27,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
+    var prodId = Math.floor(Math.random() * 3) + 1;
+    Axios.get('/img?id=' + prodId)
+    .then(function (response) {
+      console.log(response.data);
+      console.log(response.status);
+      console.log(response.statusText);
+      console.log(response.headers);
+      console.log(response.config);
+    });
   }
 
   componentWillUnmount() {
