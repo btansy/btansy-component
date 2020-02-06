@@ -15,9 +15,9 @@ class App extends React.Component {
     this.state = {
       showModal: false,
       images: [
-        'white.png',
+        'http://localhost:3000/white.png',
       ],
-      imgMain:'white.png',
+      imgMain:'http://localhost:3000/white.png',
       imgMore: [],
       active: 'one'
     };
@@ -26,7 +26,7 @@ class App extends React.Component {
   componentDidMount() {
     var x = this;
     var prodId = Math.floor(Math.random() * 3) + 1;
-    Axios.get('/img?id=' + prodId)
+    Axios.get('http://localhost:3000/img?id=' + prodId)
     .then(function (response) {
       x.setState({
         images: response.data[0].urls,
@@ -39,7 +39,7 @@ class App extends React.Component {
     if (this.state.images[num]){
       return this.state.images[num];
     } else {
-      return 'white.png';
+      return 'http://localhost:3000/white.png';
     }
   }
 

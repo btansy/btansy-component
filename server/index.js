@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const database = require('../database/index.js');
-var cors = require('cors');
+const path = require('path');
+const cors = require('cors');
 
 app.use(cors());
 
@@ -24,6 +25,18 @@ app.get('/img', (req, res) => {
       res.status(200).send(data);
     }
   })
+});
+
+app.get('/styles', (req, res) => {
+  res.sendFile(path.resolve('public/style.css'));
+});
+
+app.get('/images', (req, res) => {
+  res.sendFile(path.resolve('client/dist/bundle.js'));
+});
+
+app.get('/white', (req, res) => {
+  res.sendFile(path.resolve('public/white.png'));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
