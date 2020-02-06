@@ -15,9 +15,9 @@ class App extends React.Component {
     this.state = {
       showModal: false,
       images: [
-        'http://localhost:3000/white.png',
+        'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png',
       ],
-      imgMain:'http://localhost:3000/white.png',
+      imgMain:'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png',
       imgMore: [],
       active: 'one'
     };
@@ -39,7 +39,7 @@ class App extends React.Component {
     if (this.state.images[num]){
       return this.state.images[num];
     } else {
-      return 'http://localhost:3000/white.png';
+      return 'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png';
     }
   }
 
