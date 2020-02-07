@@ -26,7 +26,7 @@ class App extends React.Component {
   componentDidMount() {
     var x = this;
     var prodId = Math.floor(Math.random() * 3) + 1;
-    Axios.get('http://localhost:3000/img?id=' + prodId)
+    Axios.get('http://13.52.207.187:3000/img?id=' + prodId)
     .then(function (response) {
       x.setState({
         images: response.data[0].urls,
