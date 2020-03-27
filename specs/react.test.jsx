@@ -4,7 +4,7 @@ import App from '../client/src/App.jsx'
 
 
 describe('<App />', () => {
-  it('renders an `.five`', () => {
+  it('renders a `.five`', () => {
     const wrapper = mount(<App />);
     expect(wrapper).toBeTruthy();
   });

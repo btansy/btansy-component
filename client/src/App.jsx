@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Sideimage from './Sideimage.jsx';
 import Modal from './Modal.jsx';
 import Slideshow from './Slideshow.jsx';
 import Axios from 'axios';
+import {Config} from '../../config.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends React.Component {
   componentDidMount() {
     var x = this;
     var prodId = Math.floor(Math.random() * 3) + 1;
-    Axios.get('http://13.52.207.187:3000/img?id=' + prodId)
+    Axios.get(Config.url + Config.port + '/img?id=' + Config.prodId())
     .then(function (response) {
       x.setState({
         images: response.data[0].urls,
@@ -41,10 +41,6 @@ class App extends React.Component {
     } else {
       return 'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png';
     }
-  }
-
-  componentWillUnmount() {
-
   }
 
   sideBarClick(newMain, name) {
