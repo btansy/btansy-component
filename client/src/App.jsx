@@ -15,9 +15,9 @@ class App extends React.Component {
     this.state = {
       showModal: false,
       images: [
-        'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png',
+        'white',
       ],
-      imgMain:'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png',
+      imgMain:'white',
       imgMore: [],
       active: 'one'
     };
@@ -25,7 +25,6 @@ class App extends React.Component {
 
   componentDidMount() {
     var x = this;
-    var prodId = Math.floor(Math.random() * 3) + 1;
     Axios.get(Config.url + Config.port + '/img?id=' + Config.prodId())
     .then(function (response) {
       x.setState({
@@ -39,7 +38,8 @@ class App extends React.Component {
     if (this.state.images[num]){
       return this.state.images[num];
     } else {
-      return 'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png';
+//      return 'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png';
+      return 'white';
     }
   }
 
