@@ -38,16 +38,17 @@ class App extends React.Component {
     if (this.state.images[num]){
       return this.state.images[num];
     } else {
-//      return 'https://codecadetsphotodemo.s3-us-west-1.amazonaws.com/white.png';
       return 'white';
     }
   }
 
   sideBarClick(newMain, name) {
-    this.setState({
-      active: name,
-      imgMain: newMain
-    });
+    if (newMain !== 'white') {
+      this.setState({
+        active: name,
+        imgMain: newMain
+      });
+    }
   }
 
   showModal() {
@@ -77,11 +78,7 @@ class App extends React.Component {
           <Sideimage name={'two'} active={this.state.active} imageUrl={this.imageHelper(1)} sideBarClick={this.sideBarClick} />
           <Sideimage name={'three'} active={this.state.active} imageUrl={this.imageHelper(2)} sideBarClick={this.sideBarClick} />
           <Sideimage name={'four'} active={this.state.active} imageUrl={this.imageHelper(3)} sideBarClick={this.sideBarClick} />
-          <figure id='five'>
-            <img src={this.imageHelper(4)} alt="Gallery image 5" className="image"></img>
-          </figure>
-          <div id='shade'></div>
-          <div id='text' onClick={this.showModal} >+ more</div>
+          <Sideimage name={'five'} count={this.state.images.length} showModal={this.showModal} active={this.state.active} imageUrl={this.imageHelper(4)} sideBarClick={this.sideBarClick} />
           <figure id='main'>
             <img src={this.state.imgMain} alt="Gallery image 6" className="image"></img>
           </figure>
